@@ -1,0 +1,29 @@
+[
+  {
+    "javascript": {
+      "question1": {
+        "question": "Peut on réassigner une valeur avec une const ?",
+        "choix": ["oui", "non", "oui avec certains types", "la réponse D"],
+        "reponse": "oui avec certains types",
+        "explication": "Ce qu’il faut comprendre dans tout ça, c’est que quand vous déclarer une const vous créer une référence à cette valeur. Mais lorsque que vous créer un objet la référence sera attribué à l’objet pas à ce qu’il contient, ce qui permet justement de changer les valeurs à l'intérieur de l’objet puisque que l’objet n'a pas changé de référence et nous permet bien de modifier les propriétés de l’objet, ceci est également valable pour un tableau. "
+      },
+      "question2": {
+        "question": "Que renvoi ce code ?",
+        "code": "let [firstname, ,lastName] = 'John Doe Marshall'.split(' ');",
+        "choix": ["John Marshall", "John Doe Marshall", "John Doe", "renvoi une erreur"],
+        "reponse": "John Marshall",
+        "explication": "car après la virgule si rien il ignore et supprime"
+      }
+    }
+  },
+  {
+    "react": {
+      "question1": {
+        "question": "Le hook useMemo est l'équivalent de quel module en class ?",
+        "choix": ["Component", "componentDidUpdate", "PureComponent", "la réponse D"],
+        "reponse": "PureComponent",
+        "explication": "Dans une class, le PureComponent à le meme comportement que useMemo il est utiliser dans le cadre d'un optimisation de vos composants il se base sur un systeme de cache est va comparer le dernier state et le nouveau state si il y'a chanegement alors on a un render sinon pas de render"
+      }
+    }
+  }
+]
