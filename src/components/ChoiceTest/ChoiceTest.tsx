@@ -15,12 +15,12 @@ export const ChoiceTest: FunctionComponent = () => {
       </Link>
 
       <h1 className="ChoiceTest_title">
-        Choisissez votre sujet <br /> sur le lequel vous testez
+        Choisissez votre sujet <br /> sur lequel vous testez
       </h1>
       <div className="gallery">
         <div className="item" onClick={handleClick}>
           <Link to={`question/${Date.now()}`}>
-            <img title="javascript" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/300px-React-icon.svg.png" alt="" />
+            <img title="javascript" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" alt="" height="200"/>
           </Link>
         </div>
         <div className="item" onClick={handleClick}>
@@ -28,7 +28,7 @@ export const ChoiceTest: FunctionComponent = () => {
             <img title="react" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/300px-React-icon.svg.png" alt="" />
           </Link>
         </div>
-        <div className="item" onClick={handleClick}>
+        {/* <div className="item" onClick={handleClick}>
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/300px-React-icon.svg.png" alt="" />
         </div>
         <div className="item">
@@ -45,7 +45,7 @@ export const ChoiceTest: FunctionComponent = () => {
         </div>
         <div className="item">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/300px-React-icon.svg.png" alt="" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

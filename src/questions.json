@@ -2,23 +2,57 @@
   {
     "javascript": {
       "question1": {
+        "id": 1,
         "question": "Peut on réassigner une valeur avec une const ?",
         "choix": ["oui", "non", "oui avec certains types", "la réponse D"],
         "reponse": "oui avec certains types",
         "explication": "Ce qu’il faut comprendre dans tout ça, c’est que quand vous déclarer une const vous créer une référence à cette valeur. Mais lorsque que vous créer un objet la référence sera attribué à l’objet pas à ce qu’il contient, ce qui permet justement de changer les valeurs à l'intérieur de l’objet puisque que l’objet n'a pas changé de référence et nous permet bien de modifier les propriétés de l’objet, ceci est également valable pour un tableau. "
       },
       "question2": {
+        "id": 2,
         "question": "Que renvoi ce code ?",
-        "code": "let [firstname, ,lastName] = 'John Doe Marshall'.split(' ');",
+        "code": "const [firstname, ,lastName] = 'John Doe Marshall'.split(' '); </br> console.log(firstname, lastName)",
         "choix": ["John Marshall", "John Doe Marshall", "John Doe", "renvoi une erreur"],
         "reponse": "John Marshall",
-        "explication": "car après la virgule si rien il ignore et supprime"
+        "explication": "Après la virgule, si on ne donne pas de nom dans notre destructuring il ignore tout simplement."
+      },
+      "question3": {
+        "id": 3,
+        "question": "Peut on renommer une clé lorsqu'on destructure un objet ?",
+        "choix": ["oui", "non"],
+        "reponse": "oui",
+        "explication": "Effectivement, on peut d'ores et déjà le faire un exemple \n const obj = {name: toto, age: 27}; \n const {name: prenom} = obj; \n console.log(prenom); // toto"
+      },
+      "question4": {
+        "id": 4,
+        "question": "Que renvoi ce code ?",
+        "code": "true + true",
+        "choix": ["NaN", "2", "true", "0"],
+        "reponse": "2",
+        "explication": "Le + dans une opération va transformer le booléen true en number 1 \n et justement en testant 1 === +true cela nous donne bien true."
+      },
+      "question5": {
+        "id": 5,
+        "question": "Que renvoi ce code ?",
+        "code": "14 > 13 > 12",
+        "choix": ["true", "false"],
+        "reponse": "false",
+        "explication": "c'est false car ce qui se passe c'est que d'abord il fait (14 > 13) \n ce qui donne true mais dans une opération en js true = 1 donc 1 > 12 = false du coup l'opération est false"
+      },
+      "question6": {
+        "id": 6,
+        "question": "Que renvoi ce code ?",
+        "code": "[ 10, 1, 3 ].sort()",
+        "choix": ["true", "[1, 10, 3]", "[1, 3, 10]", "[10, 3, 1]"],
+        "reponse": "[1, 10, 3]",
+        "explication": "De base .sort va trier un array comme si tous les éléments étaient de type string. \n donc '1' > '10' = false [1] et '3' > '10' = true donc a bien [1, 10, 3]"
       }
     }
   },
   {
     "react": {
       "question1": {
+        "id": 1,
         "question": "Le hook useMemo est l'équivalent de quel module en class ?",
         "choix": ["Component", "componentDidUpdate", "PureComponent", "la réponse D"],
         "reponse": "PureComponent",
