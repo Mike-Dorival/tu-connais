@@ -1,18 +1,18 @@
-.Question_title {
+.question-title {
   font-family: "Baloo 2", cursive;
   color: #3e3e3e;
   font-size: 50px;
   line-height: 50px;
 }
 
-.Question_subtitle {
+.question-subtitle {
   font-family: "Baloo 2", cursive;
   font-weight: 300;
   color: #3e3e3e;
   font-size: 30px;
 }
 
-.Question_title_home {
+.question-title-home {
   font-family: "Baloo 2", cursive;
   color: #3e3e3e;
   font-size: 15px;
@@ -20,21 +20,21 @@
   padding: 50px 200px 0;
 }
 
-.Question_paragraph {
+.question-paragraph {
   font-family: "Open Sans", sans-serif;
   text-align: justify;
   max-width: 800px;
   font-weight: 100;
 }
 
-.Question_center_content {
+.question-center-content {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 70vh;
 }
 
-.Question_center_content_msg {
+.question-center-content-msg {
   font-family: "Baloo 2", cursive;
   font-size: 20px;
   color: #3e3e3e;
@@ -45,22 +45,22 @@
   height: 70vh;
 }
 
-.Question_size_image {
+.question-size-image {
   height: 127px;
   padding: 0px 200px;
 }
 
-.Question_center_header {
+.question-center-header {
   display: flex;
   justify-content: space-between;
 }
 
-.Question_button {
+.question-button {
   width: 43%;
   padding: 13px;
 }
 
-.Question_content_button {
+.question-content-button {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

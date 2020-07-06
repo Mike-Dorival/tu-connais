@@ -1,8 +1,8 @@
-import React, { useCallback, FunctionComponent } from "react";
+import React, { useCallback, FC } from "react";
 import { Link } from "react-router-dom";
 import "./ChoiceTest.css";
 
-export const ChoiceTest: FunctionComponent = () => {
+export const ChoiceTest: FC = () => {
   const handleClick = useCallback((e) => {
     const { title, src } = e.target;
     localStorage.setItem("state", JSON.stringify({ title, url: src }));
@@ -11,41 +11,32 @@ export const ChoiceTest: FunctionComponent = () => {
   return (
     <div>
       <Link to="/">
-        <h5 className="ChoiceTest_title_home">TU CONNAIS ?</h5>
+        <h5 className="choice-test-title-home">TU CONNAIS ?</h5>
       </Link>
 
-      <h1 className="ChoiceTest_title">
+      <h1 className="choice-test-title">
         Choisissez votre sujet <br /> sur lequel vous testez
       </h1>
-      <div className="gallery">
-        <div className="item" onClick={handleClick}>
+      <div className="choice-test-gallery">
+        <div onClick={handleClick}>
           <Link to={`question/${Date.now()}`}>
-            <img title="javascript" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" alt="" height="200"/>
+            <img
+              title="javascript"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
+              alt="logo_javascript"
+              height="200"
+            />
           </Link>
         </div>
-        <div className="item" onClick={handleClick}>
+        <div onClick={handleClick}>
           <Link to={`question/${Date.now()}`}>
-            <img title="react" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/300px-React-icon.svg.png" alt="" />
+            <img
+              title="react"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/300px-React-icon.svg.png"
+              alt="logo_react"
+            />
           </Link>
         </div>
-        {/* <div className="item" onClick={handleClick}>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/300px-React-icon.svg.png" alt="" />
-        </div>
-        <div className="item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/300px-React-icon.svg.png" alt="" />
-        </div>
-        <div className="item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/300px-React-icon.svg.png" alt="" />
-        </div>
-        <div className="item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/300px-React-icon.svg.png" alt="" />
-        </div>
-        <div className="item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/300px-React-icon.svg.png" alt="" />
-        </div>
-        <div className="item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/300px-React-icon.svg.png" alt="" />
-        </div> */}
       </div>
     </div>
   );

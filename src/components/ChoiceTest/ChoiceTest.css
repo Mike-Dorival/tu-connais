@@ -7,7 +7,7 @@ a {
   text-decoration: none;
 }
 
-.ChoiceTest_title_home {
+.choice-test-title-home {
   font-family: "Baloo 2", cursive;
   color: #3e3e3e;
   font-size: 15px;
@@ -15,7 +15,7 @@ a {
   padding: 50px 200px 0;
 }
 
-.ChoiceTest_title {
+.choice-test-title {
   font-family: "Baloo 2", cursive;
   color: #3e3e3e;
   font-size: 70px;
@@ -24,7 +24,7 @@ a {
   padding-top: 130px;
 }
 
-.gallery {
+.choice-test-gallery {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -32,16 +32,3 @@ a {
   max-width: 1300px;
   margin: 90px auto 0;
 }
-/* 
-    .item {
-      width: 300px;
-      height: 200px;
-      margin: 10px;
-      overflow: hidden;
-      flex-shrink: 0;
-    } */
-
-/* .item img {
-      width: 100%;
-      height: auto;
-    } */

@@ -1,15 +1,15 @@
-import React, { FunctionComponent } from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
-interface ShowMsgType {
+interface ShowMsgProps {
   endMsg: string;
   score: number;
   lengthAllQuestions: number;
 }
 
-export const ShowScoreAndEndMsg: FunctionComponent<ShowMsgType> = ({ endMsg, score, lengthAllQuestions }) => {
+export const ShowScoreAndEndMsg: FC<ShowMsgProps> = ({ endMsg, score, lengthAllQuestions }) => {
   return (
-    <div className="Question_center_content_msg">
+    <div className="question-center-content-msg">
       <h1>{endMsg}</h1>
       <h3>
         Votre score : {score}/{lengthAllQuestions}

@@ -11,7 +11,7 @@
       "question2": {
         "id": 2,
         "question": "Que renvoi ce code ?",
-        "code": "const [firstname, ,lastName] = 'John Doe Marshall'.split(' '); </br> console.log(firstname, lastName)",
+        "code": "const [firstname, ,lastName] = 'John Doe Marshall'.split(' '); \n console.log(firstname, lastName)",
         "choix": ["John Marshall", "John Doe Marshall", "John Doe", "renvoi une erreur"],
         "reponse": "John Marshall",
         "explication": "Après la virgule, si on ne donne pas de nom dans notre destructuring il ignore tout simplement."

@@ -1,10 +1,11 @@
-import React, { useState, FunctionComponent, useEffect } from "react";
+import React, { useState, useEffect, FC } from "react";
 import { Link } from "react-router-dom";
 
 import questionsDB from "../../questions.json";
-import { ShowResponseAndExplication } from "./ShowResponseAndExplication/ShowResponseAndExplication";
+import { ShowResponseAndExplanation } from "./ShowResponseAndExplanation/ShowResponseAndExplanation";
 import { ShowScoreAndEndMsg } from "./ShowScoreAndEndMsg/ShowScoreAndEndMsg";
 import { ShowQuestion } from "./ShowQuestion/ShowQuestion";
+import { goodOrBadResponse } from "../../helpers/goodOrBadResponse";
 
 import "./Question.css";
 
@@ -22,33 +23,34 @@ interface Question {
   explication: string;
 }
 
-export const Question: FunctionComponent<Question> = () => {
-  const [numberQuestion, setNumberQuestion] = useState<number>(1);
-  const [currentQuestion, setCurrentQuestion] = useState<Array<Question>>([]);
+export const Question: FC = () => {
+  const [questionNumber, setQuestionNumber] = useState(1);
+  const [currentQuestion, setCurrentQuestion] = useState<Question[]>([]);
 
-  const [lengthAllQuestions, setLengthAllQuestions] = useState<number>(0);
-  const [response, setResponse] = useState<string>("");
+  const [lengthAllQuestions, setLengthAllQuestions] = useState(0);
+  const [response, setResponse] = useState("");
 
-  const [score, setScore] = useState<number>(0);
-  const [endTestMessage, setEndTestMessage] = useState<string>("");
+  const [score, setScore] = useState(0);
+  const [endTestMessage, setEndTestMessage] = useState("");
   // ! équivalent à || quelque chose ex {}
   const { title, url }: State = JSON.parse(localStorage.getItem("state")!);
 
   useEffect(() => {
-    const filterSubject: Array<any> = questionsDB.filter((subject: any) => subject[title]);
-    const formatSubject: Array<{}> = [filterSubject[0][title]];
+    const filterSubject: any[] = questionsDB.filter((subject: any) => subject[title]);
+    const formatSubject = [filterSubject[0][title]];
 
-    const lengthAllQuestions: number = Object.keys(formatSubject[0]).length;
-    const question: string = "question" + numberQuestion;
+    const lengthAllQuestions = Object.keys(formatSubject[0]).length;
+    const question = `question${questionNumber}`;
 
-    const selectQuestion: Array<any> = formatSubject.map((numberQuestion: any) => numberQuestion[question]);
+    const selectQuestion = formatSubject.map((questionNumber) => questionNumber[question]);
 
     setLengthAllQuestions(lengthAllQuestions);
     setCurrentQuestion(selectQuestion);
-  }, [numberQuestion, title]);
+  }, [questionNumber, title]);
 
   const checkResponse = (response: string) => {
-    const goodResponse: string = currentQuestion[0].reponse === response ? "Bonne réponse" : "Mauvaise réponse";
+    const checkGoodOrBadResponse = Object.values(goodOrBadResponse);
+    const goodResponse: string = currentQuestion[0].reponse === response ? checkGoodOrBadResponse[0] : checkGoodOrBadResponse[1];
 
     if (goodResponse === "Bonne réponse") {
       setScore(score + 1);
@@ -58,27 +60,27 @@ export const Question: FunctionComponent<Question> = () => {
   };
 
   const nextQuestion = () => {
-    if (numberQuestion === lengthAllQuestions) {
+    if (questionNumber === lengthAllQuestions) {
       setResponse("");
       setEndTestMessage("Fin du test");
     }
-    setNumberQuestion(numberQuestion + 1);
+    setQuestionNumber(questionNumber + 1);
     setResponse("");
   };
 
   return (
     <div>
       <Link to="/">
-        <div className="Question_center_header">
-          <h5 className="Question_title_home">TU CONNAIS ?</h5>
-          <img className="Question_size_image" src={url} alt={title} />
+        <div className="question-center-header">
+          <h5 className="question-title-home">TU CONNAIS ?</h5>
+          <img className="question-size-image" src={url} alt={title} />
         </div>
       </Link>
 
-      <div className="Question_center_content">
+      <div className="question-center-content">
         {response.length ? (
           currentQuestion.map(({ id, explication, reponse }) => (
-            <ShowResponseAndExplication key={id} checkResponse={response} nextQuestion={nextQuestion} explication={explication} response={reponse} />
+            <ShowResponseAndExplanation key={id} checkResponse={response} nextQuestion={nextQuestion} explication={explication} response={reponse} />
           ))
         ) : endTestMessage.length ? (
           <ShowScoreAndEndMsg endMsg={endTestMessage} score={score} lengthAllQuestions={lengthAllQuestions} />
