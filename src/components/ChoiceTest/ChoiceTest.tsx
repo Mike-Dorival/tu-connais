@@ -21,7 +21,7 @@ export const ChoiceTest: FC = () => {
         <div onClick={handleClick}>
           <Link to={`question/${Date.now()}`}>
             <img
-              title="javascript"
+              title="js"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
               alt="logo_javascript"
               height="200"
