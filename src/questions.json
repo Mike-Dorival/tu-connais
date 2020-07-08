@@ -1,29 +1,67 @@
 [
   {
-    "javascript": {
-      "question1": {
+    "id": 1,
+    "type": "js",
+    "questions": [
+      {
+        "id": 1,
         "question": "Peut on réassigner une valeur avec une const ?",
-        "choix": ["oui", "non", "oui avec certains types", "la réponse D"],
-        "reponse": "oui avec certains types",
-        "explication": "Ce qu’il faut comprendre dans tout ça, c’est que quand vous déclarer une const vous créer une référence à cette valeur. Mais lorsque que vous créer un objet la référence sera attribué à l’objet pas à ce qu’il contient, ce qui permet justement de changer les valeurs à l'intérieur de l’objet puisque que l’objet n'a pas changé de référence et nous permet bien de modifier les propriétés de l’objet, ceci est également valable pour un tableau. "
+        "choices": ["oui", "non", "oui avec certains types", "la réponse D"],
+        "answer": "oui avec certains types",
+        "explanation": "Ce qu’il faut comprendre dans tout ça, c’est que quand vous déclarez une const, vous créez une référence à cette valeur. Mais lorsque que vous créez un objet, la référence sera attribuée à l’objet, pas à ce qu’il contient, ce qui permet justement de changer les valeurs à l'intérieur de l’objet puisque que l’objet n'a pas changé de référence et nous permet bien de modifier les propriétés de l’objet. Ceci est également valable pour un tableau. "
       },
-      "question2": {
-        "question": "Que renvoi ce code ?",
-        "code": "let [firstname, ,lastName] = 'John Doe Marshall'.split(' ');",
-        "choix": ["John Marshall", "John Doe Marshall", "John Doe", "renvoi une erreur"],
-        "reponse": "John Marshall",
-        "explication": "car après la virgule si rien il ignore et supprime"
+      {
+        "id": 2,
+        "question": "Que renvoie ce code ?",
+        "code": "const [firstname, ,lastName] = 'John Doe Marshall'.split(' '); \n console.log(firstname, lastName)",
+        "choices": ["John Marshall", "John Doe Marshall", "John Doe", "renvoie une erreur"],
+        "answer": "John Marshall",
+        "explanation": "Après la virgule, si on ne donne pas de nom dans notre destructuring il ignore tout simplement."
+      },
+      {
+        "id": 3,
+        "question": "Peut on renommer une clé lorsqu'on destructure un objet ?",
+        "choices": ["oui", "non"],
+        "answer": "oui",
+        "explanation": "Effectivement, on peut d'ores et déjà le faire un exemple \n const obj = {name: toto, age: 27}; \n const {name: prenom} = obj; \n console.log(prenom); // toto"
+      },
+      {
+        "id": 4,
+        "question": "Que renvoie ce code ?",
+        "code": "true + true",
+        "choices": ["NaN", "2", "true", "0"],
+        "answer": "2",
+        "explanation": "Le + dans une opération va transformer le booléen true en number 1 \n et justement en testant 1 === +true cela nous donne bien true."
+      },
+      {
+        "id": 5,
+        "question": "Que renvoie ce code ?",
+        "code": "14 > 13 > 12",
+        "choices": ["true", "false"],
+        "answer": "false",
+        "explanation": "c'est false car ce qui se passe c'est que d'abord il fait (14 > 13) \n ce qui donne true mais dans une opération en js true = 1 donc 1 > 12 = false du coup l'opération est false"
+      },
+      {
+        "id": 6,
+        "question": "Que renvoie ce code ?",
+        "code": "[ 10, 1, 3 ].sort()",
+        "choices": ["true", "[1, 10, 3]", "[1, 3, 10]", "[10, 3, 1]"],
+        "answer": "[1, 10, 3]",
+        "explanation": "De base .sort va trier un array comme si tous les éléments étaient de type string. \n donc '1' > '10' = false [1] et '3' > '10' = true donc a bien [1, 10, 3]"
       }
-    }
+    ]
   },
   {
-    "react": {
-      "question1": {
+    "id": 2,
+    "type": "react",
+    "questions": [
+      {
+        "id": 1,
         "question": "Le hook useMemo est l'équivalent de quel module en class ?",
-        "choix": ["Component", "componentDidUpdate", "PureComponent", "la réponse D"],
-        "reponse": "PureComponent",
-        "explication": "Dans une class, le PureComponent à le meme comportement que useMemo il est utiliser dans le cadre d'un optimisation de vos composants il se base sur un systeme de cache est va comparer le dernier state et le nouveau state si il y'a chanegement alors on a un render sinon pas de render"
+        "choices": ["Component", "componentDidUpdate", "PureComponent", "la réponse D"],
+        "answer": "PureComponent",
+        "explanation": "Dans une class, le PureComponent à le meme comportement que useMemo il est utiliser dans le cadre d'une optimisation de vos composants, il se base sur un systeme de cache et va comparer le dernier state et le nouveau state, si il y'a chanegement alors on a un render sinon pas de render"
       }
-    }
+    ]
   }
 ]
