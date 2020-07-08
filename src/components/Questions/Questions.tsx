@@ -7,7 +7,7 @@ import { AnswerAndExplanation } from "./AnswerAndExplanation/AnswerAndExplanatio
 import { ScoreAndEndMessage } from "./ScoreAndEndMessage/ScoreAndEndMessage";
 import { Question } from "./Question/Question";
 
-import { goodOrBadAnswer } from "../../helpers/goodOrBadAnswer";
+import { Answer } from "../../helpers/answer";
 
 import "./Questions.css";
 
@@ -20,7 +20,7 @@ interface Question {
   id: number;
   code: string;
   question: string;
-  choice: string[];
+  choices: string[];
   answer: string;
   explanation: string;
 }
@@ -49,9 +49,9 @@ export const Questions: FC = () => {
   }, [questionNumber, title]);
 
   const checkAnswer = (answer: string) => {
-    const goodAnswer: string = currentQuestion[0].answer === answer ? goodOrBadAnswer.GOOD : goodOrBadAnswer.BAD;
+    const goodAnswer: string = currentQuestion[0].answer === answer ? Answer.GOOD : Answer.BAD;
 
-    if (goodAnswer === goodOrBadAnswer.GOOD) {
+    if (goodAnswer === Answer.GOOD) {
       setScore(score + 1);
     }
 
@@ -84,8 +84,8 @@ export const Questions: FC = () => {
         ) : endTestMessage.length ? (
           <ScoreAndEndMessage endMessage={endTestMessage} score={score} lengthAllQuestions={lengthAllQuestions} />
         ) : (
-          currentQuestion.map(({ id, question, choice, code }) => (
-            <Question key={id} question={question} choice={choice} code={code} checkAnswer={checkAnswer} />
+          currentQuestion.map(({ id, question, choices, code }) => (
+            <Question key={id} question={question} choices={choices} code={code} checkAnswer={checkAnswer} />
           ))
         )}
       </div>

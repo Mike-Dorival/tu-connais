@@ -3,12 +3,12 @@ import { findLineBreaker } from "../../../helpers/findTextLineBreaker";
 
 interface QuestionProps {
   question: string;
-  choice: string[];
+  choices: string[];
   code: string;
   checkAnswer: (answer: string) => void;
 }
 
-export const Question: FC<QuestionProps> = ({ question, choice, code, checkAnswer }) => {
+export const Question: FC<QuestionProps> = ({ question, choices, code, checkAnswer }) => {
   const check = useCallback(
     (answer: string) => {
       checkAnswer(answer);
@@ -21,9 +21,9 @@ export const Question: FC<QuestionProps> = ({ question, choice, code, checkAnswe
       <h1 className="question-title">{question}</h1>
       {<h2 className="question-paragraph">{code?.includes("\n") ? findLineBreaker(code) : code}</h2>}
       <div key={question} className="question-content-button">
-        {choice.map((choixResponse: string) => (
-          <button key={choixResponse} className="question-button" onClick={() => check(choixResponse)}>
-            {choixResponse}
+        {choices.map((choice: string) => (
+          <button key={choice} className="question-button" onClick={() => check(choice)}>
+            {choice}
           </button>
         ))}
       </div>
