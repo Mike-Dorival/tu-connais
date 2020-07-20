@@ -1,7 +1,7 @@
 {
   "name": "tu-connais",
   "version": "0.1.0",
-  "homepage": "http://mike-dorival.github.io/tu-connais",
+  "homepage": "http://mikedorival.github.io/tu-connais",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
