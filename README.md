@@ -19,12 +19,12 @@ Aujourd'hui, je vous le partage.
 
 # Prérequis
 
-Avoir nodejs >= 10 et npm sur son ordinateur.
+Avoir nodejs >= 10 et npm/yarn sur son ordinateur.
 
 # Lancer le projet
 
 1. ouvrir un terminal
 2. `git clone https://github.com/Mirosz-Mike/Tu-connais-quizz.git`
 3. ouvrir le dossier
-4. `npm i` ou `npm install`
+4. `yarn` ou `yarn install`
 5. `npm start`

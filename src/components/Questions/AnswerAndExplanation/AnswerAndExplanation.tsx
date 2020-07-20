@@ -15,7 +15,7 @@ export const AnswerAndExplanation: FC<AnswerAndExplanationProps> = ({ checkAnswe
   return (
     <div>
       <h1 className="question-title">{checkAnswer}</h1>
-      {checkAnswer === Answer.BAD && <h3 className="question-subtitle"> La réponse était {answer} </h3>}
+      {checkAnswer === Answer.BAD && <h3 className="question-subtitle"> La réponse était {answer.toLowerCase()} </h3>}
       <p className="question-paragraph">Explication : {explanation.includes("\n") ? findLineBreaker(explanation) : explanation}</p>
       <button onClick={check}>Prochaine question</button>
     </div>
