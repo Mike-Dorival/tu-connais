@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "type": "js",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Peut on réassigner une valeur avec une const ?",
+        "choices": ["oui", "non", "oui avec certains types", "la réponse D"],
+        "answer": "oui avec certains types",
+        "explanation": "Ce qu’il faut comprendre dans tout ça, c’est que quand vous déclarez une const, vous créez une référence à cette valeur. Mais lorsque que vous créez un objet, la référence sera attribuée à l’objet, pas à ce qu’il contient, ce qui permet justement de changer les valeurs à l'intérieur de l’objet puisque que l’objet n'a pas changé de référence et nous permet bien de modifier les propriétés de l’objet. Ceci est également valable pour un tableau. "
+      },
+      {
+        "id": 2,
+        "question": "Que renvoie ce code ?",
+        "code": "const [firstname, ,lastName] = 'John Doe Marshall'.split(' '); \n console.log(firstname, lastName)",
+        "choices": ["John Marshall", "John Doe Marshall", "John Doe", "renvoie une erreur"],
+        "answer": "John Marshall",
+        "explanation": "Après la virgule, si on ne donne pas de nom dans notre destructuring il ignore tout simplement."
+      },
+      {
+        "id": 3,
+        "question": "Peut on renommer une clé lorsqu'on destructure un objet ?",
+        "choices": ["oui", "non"],
+        "answer": "oui",
+        "explanation": "Effectivement, on peut d'ores et déjà le faire un exemple \n const obj = {name: toto, age: 27}; \n const {name: prenom} = obj; \n console.log(prenom); // toto"
+      },
+      {
+        "id": 4,
+        "question": "Que renvoie ce code ?",
+        "code": "true + true",
+        "choices": ["NaN", "2", "true", "0"],
+        "answer": "2",
+        "explanation": "Le + dans une opération va transformer le booléen true en number 1 \n et justement en testant 1 === +true cela nous donne bien true."
+      },
+      {
+        "id": 5,
+        "question": "Que renvoie ce code ?",
+        "code": "14 > 13 > 12",
+        "choices": ["true", "false"],
+        "answer": "false",
+        "explanation": "c'est false car ce qui se passe c'est que d'abord il fait (14 > 13) \n ce qui donne true mais dans une opération en js true = 1 donc 1 > 12 = false du coup l'opération est false."
+      },
+      {
+        "id": 6,
+        "question": "Que renvoie ce code ?",
+        "code": "[ 10, 1, 3 ].sort()",
+        "choices": ["true", "[1, 10, 3]", "[1, 3, 10]", "[10, 3, 1]"],
+        "answer": "[1, 10, 3]",
+        "explanation": "De base .sort va trier un array comme si tous les éléments étaient de type string. \n donc '1' > '10' = false [1] et '3' > '10' = true donc a bien [1, 10, 3]."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "type": "react",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Le hook useMemo est l'équivalent de quel module en class ?",
+        "choices": ["Component", "componentDidUpdate", "PureComponent", "componentDidMount"],
+        "answer": "PureComponent",
+        "explanation": "Dans une class, le PureComponent à le meme comportement que useMemo il est utiliser dans le cadre d'une optimisation de vos composants, il se base sur un systeme de cache (Mémoïsation) et va comparer le dernier state et le nouveau state, si il y'a changement alors on a un nouveau rendu sinon pas de rendu."
+      },
+      {
+        "id": 2,
+        "question": "Quand on parle de stateful, on parle de ?",
+        "choices": [
+          "Composant qui est une classe comportant un état (minimum)",
+          "Composant qui comporte que du JSX",
+          "Composant qui est une classe ne comportant pas état",
+          "Composant qui est un composant fonctionnel"
+        ],
+        "answer": "Composant qui est une classe comportant un état (minimum)",
+        "explanation": "Un composant stateful est une classe comportant au moins un état (state) minimum pour eventuellement manipuler cet état (state)."
+      },
+      {
+        "id": 3,
+        "question": "À quelle version de React apparaît les hooks ?",
+        "choices": ["16.5.0", "16.6.0", "16.7.0", "16.8.0"],
+        "answer": "16.8.0",
+        "explanation": "Les hooks ont été introduites à la version 16.8.0"
+      },
+      {
+        "id": 4,
+        "question": "C'est quoi un HOC (Higher-Order Component) ?",
+        "choices": [
+          "Une fonction qui accepte un composant et renvoie un nouveau composant",
+          "Une fonction qui prend en argument une ou plusieurs fonctions ou qui retourne une autre fonction",
+          "Une fonction qui renvoie uniquement du JSX",
+          "Une fonction qui render un composant"
+        ],
+        "answer": "Une fonction qui accepte un composant et renvoie un nouveau composant",
+        "explanation": "Un HOC est une technique avancée qui permet de réutiliser la logique de composants. \n Par exemple dans votre application vous avez besoin de plusieurs modales plutôt que de créer une modale par composant, vous allez créer uniquement une modale qui prendra les props et composant que vous lui donnerez."
+      },
+      {
+        "id": 5,
+        "question": "Le hook useCallback permet ?",
+        "choices": [
+          "De renvoyez une version mémoïsée de la fonction de rappel qui changera uniquement si une des entrées a changé.",
+          "De renvoyez une version mémoïsée de la fonction de rappel qui changera uniquement si plusieurs entrées a changé",
+          "De renvoyez une version mémoïsée de la fonction de rappel qui changera uniquement si aucune des entrées a changé",
+          "De renvoyez une version mémoïsée de la fonction de rappel qui changera uniquement si trois entrées ont changé"
+        ],
+        "answer": "De renvoyez une version mémoïsée de la fonction de rappel qui changera uniquement si une des entrées a changé.",
+        "explanation": "Le useCallback est similaire à useMemo est va vous éviter des rendus inutiles, en comparant si le changement d'un state a changé ou non"
+      },
+      {
+        "id": 6,
+        "question": "Dans quel cas est-il plus judicieux d'utiliser l'api contexte plutôt que redux ?",
+        "choices": [
+          "Dans le cas d'un changement de theme de notre app",
+          "Dans le cas où l'app a besoin d'une gestion de données utilisateurs",
+          "Dans le cas où notre app est gros exemple e-commerce",
+          "Dans le cas où plusieurs composants a besoin de plusieurs données en commun"
+        ],
+        "answer": "Dans le cas d'un changement de theme de notre app",
+        "explanation": "L'api contexte est judicieux, pour des petits projets par exemple une app météo le changement de theme ou changer la langue de notre application est très bien. \n Pour un projet dans le style d'un e-commerce, il sera préférable d'utiliser redux ou bien une surcouche de redux comme (recoil, easy-peazy...)."
+      }
+    ]
+  }
+]
