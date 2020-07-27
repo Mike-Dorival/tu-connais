@@ -1,3 +1,8 @@
+::selection {
+  color: #fff;
+  background: #fcca49;
+}
+
 .question-title {
   font-family: "Baloo 2", cursive;
   color: #3e3e3e;

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import { Home } from "./components/Home/Home";
 import { ChoiceTest } from "./components/ChoiceTest/ChoiceTest";
 import { Questions } from "./components/Questions/Questions";
@@ -8,7 +8,7 @@ import "./App.css";
 
 export const App: FC = () => {
   return (
-    <Router>
+    <HashRouter basename="/">
       <div>
         <Switch>
           <Route path="/" exact component={Home} />
@@ -16,6 +16,6 @@ export const App: FC = () => {
           <Route path="/question" component={Questions} />
         </Switch>
       </div>
-    </Router>
+    </HashRouter>
   );
 };

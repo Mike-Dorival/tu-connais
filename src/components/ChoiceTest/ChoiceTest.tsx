@@ -37,6 +37,11 @@ export const ChoiceTest: FC = () => {
             />
           </Link>
         </div>
+        <div onClick={handleClick} className="choice-test">
+          <Link to={`question/${Date.now()}`} className="choice-test-culture">
+            <img title="culture web" src="https://images-na.ssl-images-amazon.com/images/I/51USpXI-iRL.jpg" alt="logo_culture_web" height="200" />
+          </Link>
+        </div>
       </div>
     </div>
   );

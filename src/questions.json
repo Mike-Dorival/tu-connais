@@ -118,5 +118,18 @@
         "explanation": "L'api contexte est judicieux, pour des petits projets par exemple une app météo le changement de theme ou changer la langue de notre application est très bien. \n Pour un projet dans le style d'un e-commerce, il sera préférable d'utiliser redux ou bien une surcouche de redux comme (recoil, easy-peazy...)."
       }
     ]
+  },
+  {
+    "id": 1,
+    "type": "culture web",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Que veut dire TMC ?",
+        "choices": ["Temps Moyen de Connexion", "Tests de montée en charge", "Traffic Message Channel", "Une chaîne de la TNT"],
+        "answer": "Tests de montée en charge",
+        "explanation": "En cours de rédaction"
+      }
+    ]
   }
 ]

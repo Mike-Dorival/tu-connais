@@ -32,3 +32,20 @@ a {
   max-width: 1300px;
   margin: 90px auto 0;
 }
+
+.choice-test {
+  display: flex;
+}
+
+.choice-test-culture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.choice-test-culture-web {
+  font-family: "Baloo 2", cursive;
+  color: #3e3e3e;
+  font-size: 60px;
+}
