@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/tu-connais/static/css/main.2efd1250.chunk.css",
-    "main.js": "/tu-connais/static/js/main.6fa79fee.chunk.js",
-    "main.js.map": "/tu-connais/static/js/main.6fa79fee.chunk.js.map",
+    "main.js": "/tu-connais/static/js/main.8f96bba1.chunk.js",
+    "main.js.map": "/tu-connais/static/js/main.8f96bba1.chunk.js.map",
     "runtime-main.js": "/tu-connais/static/js/runtime-main.98e9716f.js",
     "runtime-main.js.map": "/tu-connais/static/js/runtime-main.98e9716f.js.map",
     "static/js/2.08885065.chunk.js": "/tu-connais/static/js/2.08885065.chunk.js",
     "static/js/2.08885065.chunk.js.map": "/tu-connais/static/js/2.08885065.chunk.js.map",
     "index.html": "/tu-connais/index.html",
-    "precache-manifest.811a85c4aed217dd77dcaed5fd45470f.js": "/tu-connais/precache-manifest.811a85c4aed217dd77dcaed5fd45470f.js",
+    "precache-manifest.080a71928110eb7556371da3985faf34.js": "/tu-connais/precache-manifest.080a71928110eb7556371da3985faf34.js",
     "service-worker.js": "/tu-connais/service-worker.js",
     "static/css/main.2efd1250.chunk.css.map": "/tu-connais/static/css/main.2efd1250.chunk.css.map",
     "static/js/2.08885065.chunk.js.LICENSE.txt": "/tu-connais/static/js/2.08885065.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.98e9716f.js",
     "static/js/2.08885065.chunk.js",
     "static/css/main.2efd1250.chunk.css",
-    "static/js/main.6fa79fee.chunk.js"
+    "static/js/main.8f96bba1.chunk.js"
   ]
 }
