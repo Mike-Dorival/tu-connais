@@ -63,32 +63,41 @@ export const Questions: FC = () => {
       setResponse("");
       setEndTestMessage("Fin du test");
     }
-    setQuestionNumber(questionNumber + 1);
-    setResponse("");
+
+    const timer = setTimeout(() => {
+      setQuestionNumber(questionNumber + 1);
+      setResponse("");
+    }, 50);
+
+    return () => clearTimeout(timer);
+  };
+
+  const render = () => {
+    if (response.length) {
+      return currentQuestion.map(({ id, explanation, answer }) => (
+        <AnswerAndExplanation key={id} checkAnswer={response} nextQuestion={nextQuestion} explanation={explanation} answer={answer} />
+      ));
+    }
+
+    if (endTestMessage.length) {
+      return <ScoreAndEndMessage endMessage={endTestMessage} score={score} lengthAllQuestions={lengthAllQuestions} />;
+    }
+
+    return currentQuestion.map(({ id, question, choices, code }) => (
+      <Question key={id} question={question} choices={choices} code={code} checkAnswer={checkAnswer} />
+    ));
   };
 
   return (
     <div>
-      <Link to="/">
-        <div className="question-center-header">
+      <div className="question-center-header">
+        <Link to="/">
           <h5 className="question-title-home">TU CONNAIS ?</h5>
-          <img className="question-size-image" src={url} alt={title} />
-        </div>
-      </Link>
-
-      <div className="question-center-content">
-        {response.length ? (
-          currentQuestion.map(({ id, explanation, answer }) => (
-            <AnswerAndExplanation key={id} checkAnswer={response} nextQuestion={nextQuestion} explanation={explanation} answer={answer} />
-          ))
-        ) : endTestMessage.length ? (
-          <ScoreAndEndMessage endMessage={endTestMessage} score={score} lengthAllQuestions={lengthAllQuestions} />
-        ) : (
-          currentQuestion.map(({ id, question, choices, code }) => (
-            <Question key={id} question={question} choices={choices} code={code} checkAnswer={checkAnswer} />
-          ))
-        )}
+        </Link>
+        <img className="question-size-image" src={url} alt={title} />
       </div>
+
+      <div className="question-center-content">{render()}</div>
     </div>
   );
 };

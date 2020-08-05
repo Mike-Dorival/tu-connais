@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 interface MessageProps {
   endMessage: string;
@@ -14,9 +14,12 @@ export const ScoreAndEndMessage: FC<MessageProps> = ({ endMessage, score, length
       <h3>
         Votre score : {score}/{lengthAllQuestions}
       </h3>
-      <Link to="/choice">
-        <button>Sélectionner un autre test</button>
-      </Link>
+
+      <Router>
+        <Link to="/choice">
+          <button>Sélectionner un autre test</button>
+        </Link>
+      </Router>
     </div>
   );
 };

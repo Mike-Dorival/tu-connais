@@ -13,7 +13,7 @@
       {
         "id": 2,
         "question": "Que renvoie ce code ?",
-        "code": "const [firstname, ,lastName] = 'John Doe Marshall'.split(' '); \n console.log(firstname, lastName)",
+        "code": "src/static/john_doe.png",
         "choices": ["John Marshall", "John Doe Marshall", "John Doe", "renvoie une erreur"],
         "answer": "John Marshall",
         "explanation": "Après la virgule, si on ne donne pas de nom dans notre destructuring il ignore tout simplement."
